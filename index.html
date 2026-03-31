@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDS-Friendly Muscle Building Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #f7f3ee;
+  color: #2c2520;
+  font-family: 'DM Sans', Georgia, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  background-color: #2c2520;
+  padding: 48px 24px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  border: 1px solid rgba(182,157,118,0.12);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b69d76;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(32px, 8vw, 52px);
+  font-weight: 600;
+  color: #f7f3ee;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #b69d76;
+}
+
+.hero-sub {
+  font-size: 13px;
+  color: rgba(247,243,238,0.5);
+  max-width: 340px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(182,157,118,0.35);
+  color: rgba(247,243,238,0.65);
+}
+
+/* ── FLARE BANNER ── */
+.flare-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #3d2f1e;
+  padding: 12px 20px;
+  font-size: 12px;
+  color: rgba(247,243,238,0.8);
+  border-bottom: 1px solid rgba(182,157,118,0.15);
+}
+
+.flare-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.fdot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.fdot-green { background-color: #5a9e6f; }
+.fdot-yellow { background-color: #d4aa47; }
+.fdot-red { background-color: #c0392b; }
+
+.flare-text { flex: 1; }
+
+/* ── TAB NAV ── */
+.tab-nav {
+  background-color: #2c2520;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(182,157,118,0.15);
+}
+
+.tab-nav::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  flex-shrink: 0;
+  padding: 14px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(247,243,238,0.4);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.tab-btn:hover { color: rgba(247,243,238,0.7); }
+.tab-btn.active { color: #b69d76; border-bottom-color: #b69d76; }
+
+/* ── TAB PANELS ── */
+.tab-panel { display: none; padding: 28px 20px 60px; max-width: 680px; margin: 0 auto; }
+.tab-panel.active { display: block; }
+
+/* ── SECTION TYPOGRAPHY ── */
+.section-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #9a8a7a;
+  margin-bottom: 20px;
+  display: block;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #2c2520;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c2520;
+  margin-bottom: 10px;
+}
+
+p { margin-bottom: 14px; color: #4a3f36; }
+
+/* ── CARDS ── */
+.card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(44,37,32,0.08);
+}
+
+.card-dark {
+  background-color: #2c2520;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.card-accent {
+  background-color: #f0ebe2;
+  border-left: 3px solid #b69d76;
+  border-radius: 0 6px 6px 0;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+/* ── EXERCISE CARDS ── */
+.exercise-card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 18px 18px 16px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(44,37,32,0.08);
+}
+
+.ex-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.ex-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #d4be97;
+  flex-shrink: 0;
+  line-height: 1;
+  min-width: 28px;
+}
+
+.ex-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2520;
+  flex: 1;
+}
+
+.ex-sets {
+  font-size: 11px;
+  font-weight: 500;
+  color: #b69d76;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ex-feel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a8a7a;
+  margin-bottom: 8px;
+}
+
+.ex-desc {
+  font-size: 13px;
+  color: #5a4f46;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.cue-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.cue-list li {
+  font-size: 12px;
+  color: #4a3f36;
+  padding: 4px 0 4px 16px;
+  position: relative;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cue-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #b69d76;
+  font-size: 11px;
+}
+
+.stop-if {
+  font-size: 12px;
+  color: #9a5a4a;
+  background-color: #fdf0ed;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-top: 10px;
+}
+
+/* ── PILL CHIPS ── */
+.chip {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+
+.chip-green { background-color: #ddf0e5; color: #2d6b47; }
+.chip-yellow { background-color: #fdf3d7; color: #7a5e10; }
+.chip-red { background-color: #fde8e5; color: #7a2a20; }
+.chip-blue { background-color: #e5edf8; color: #2a4a7a; }
+.chip-gold { background-color: #f5ecd8; color: #6b4e1a; }
+
+/* ── FLARE TRAFFIC LIGHT ── */
+.traffic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.traffic-cell {
+  border-radius: 6px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.tc-green { background-color: #ddf0e5; }
+.tc-yellow { background-color: #fdf3d7; }
+.tc-red { background-color: #fde8e5; }
+
+.tc-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+}
+
+.tc-green .tc-dot { background-color: #5a9e6f; }
+.tc-yellow .tc-dot { background-color: #d4aa47; }
+.tc-red .tc-dot { background-color: #c0392b; }
+
+.tc-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.tc-green .tc-label { color: #2d6b47; }
+.tc-yellow .tc-label { color: #7a5e10; }
+.tc-red .tc-label { color: #7a2a20; }
+
+.tc-desc {
+  font-size: 11px;
+  line-height: 1.5;
+  color: #4a3f36;
+}
+
+/* ── WARMUP LIST ── */
+.warmup-list {
+  list-style: none;
+  counter-reset: warmup;
+}
+
+.warmup-list li {
+  counter-increment: warmup;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(44,37,32,0.07);
+  font-size: 13px;
+  color: #4a3f36;
+  margin: 0;
+}
+
+.warmup-list li:last-child { border-bottom: none; }
+
+.warmup-list li::before {
+  content: counter(warmup);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #d4be97;
+  min-width: 20px;
+  flex-shrink: 0;
+}
+
+/* ── RULE GRID ── */
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rule-cell {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 14px;
+  border: 1px solid rgba(44,37,32,0.08);
+}
+
+.rule-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b69d76;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.rule-value {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c2520;
+  line-height: 1.3;
+}
+
+/* ── PHASE TIMELINE ── */
+.phases {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.phase {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 14px;
+  border-top: 3px solid #d4be97;
+  border-left: 1px solid rgba(44,37,32,0.08);
+  border-right: 1px solid rgba(44,37,32,0.08);
+  border-bottom: 1px solid rgba(44,37,32,0.08);
+}
+
+.phase:nth-child(2) { border-top-color: #b69d76; }
+.phase:nth-child(3) { border-top-color: #8b7355; }
+
+.phase-weeks {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9a8a7a;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.phase-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c2520;
+  margin-bottom: 8px;
+}
+
+.phase-desc {
+  font-size: 12px;
+  color: #6a5f56;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── AVOID / PRIORITIZE ── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.avoid-box {
+  background-color: #fde8e5;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.avoid-box h4 {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #7a2a20;
+  margin-bottom: 10px;
+}
+
+.priority-box {
+  background-color: #ddf0e5;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.priority-box h4 {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2d6b47;
+  margin-bottom: 10px;
+}
+
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  font-size: 12px;
+  color: #4a3f36;
+  padding: 4px 0 4px 16px;
+  position: relative;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.check-list li::before {
+  content: '×';
+  position: absolute;
+  left: 0;
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.priority-box .check-list li::before {
+  content: '✓';
+  color: #5a9e6f;
+}
+
+/* ── WEIGHT TABLE ── */
+.weight-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+.weight-table th {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9a8a7a;
+  text-align: left;
+  padding: 8px 12px;
+  background-color: #ede8df;
+  border-bottom: 1px solid rgba(44,37,32,0.1);
+}
+
+.weight-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(44,37,32,0.06);
+  color: #4a3f36;
+  vertical-align: top;
+}
+
+.weight-table tr:last-child td { border-bottom: none; }
+.weight-table tr:nth-child(even) td { background-color: rgba(247,243,238,0.8); }
+
+.weight-range {
+  font-weight: 500;
+  color: #2c2520;
+}
+
+/* ── CIRCUIT ROUNDS ── */
+.circuit {
+  background-color: #2c2520;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.circuit-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #b69d76;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.circuit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(182,157,118,0.1);
+  font-size: 13px;
+  color: rgba(247,243,238,0.8);
+}
+
+.circuit-item:last-child { border-bottom: none; }
+
+.circuit-count {
+  font-weight: 500;
+  color: #b69d76;
+  font-size: 12px;
+}
+
+/* ── UNIVERSAL RULES (sticky cue) ── */
+.universal-rules {
+  background-color: #3d2f1e;
+  border-radius: 6px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.universal-rules h4 {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b69d76;
+  margin-bottom: 12px;
+}
+
+.rule-row {
+  display: flex;
+  gap: 8px;
+  padding: 5px 0;
+  font-size: 13px;
+  color: rgba(247,243,238,0.75);
+  align-items: baseline;
+}
+
+.rule-row::before {
+  content: '·';
+  color: #b69d76;
+  font-size: 18px;
+  line-height: 0;
+  flex-shrink: 0;
+  position: relative;
+  top: 2px;
+}
+
+/* ── RESCUE BOX ── */
+.rescue {
+  background-color: #3d2f1e;
+  border-left: 3px solid #b69d76;
+  border-radius: 0 6px 6px 0;
+  padding: 18px;
+  margin-top: 24px;
+}
+
+.rescue h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  color: #f7f3ee;
+  margin-bottom: 10px;
+}
+
+.rescue p {
+  font-size: 13px;
+  color: rgba(247,243,238,0.65);
+  margin-bottom: 8px;
+}
+
+.rescue ol {
+  margin-left: 16px;
+  font-size: 13px;
+  color: rgba(247,243,238,0.75);
+}
+
+.rescue ol li { margin-bottom: 4px; }
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(44,37,32,0.1);
+  margin: 24px 0;
+}
+
+/* ── STEP INDICATOR ── */
+.step {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.step-num {
+  background-color: #b69d76;
+  color: #fff;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.step-body h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #2c2520;
+  margin-bottom: 5px;
+}
+
+.step-body p {
+  font-size: 13px;
+  color: #5a4f46;
+  margin: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  background-color: #2c2520;
+  padding: 30px 24px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 12px;
+  color: rgba(247,243,238,0.35);
+  margin-bottom: 4px;
+}
+
+footer strong {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: #b69d76;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 400px) {
+  .rules-grid, .two-col { grid-template-columns: 1fr; }
+  .phases { grid-template-columns: 1fr; }
+  .traffic-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="hero-eyebrow">12-Week Home Program</span>
+  <div class="hero-title">Built to <em>Last</em></div>
+  <p class="hero-sub">An EDS-friendly, migraine-aware muscle-building program using dumbbells and kettlebells. 2–3 days/week.</p>
+  <div class="hero-tags">
+    <span class="tag">EDS-Safe</span>
+    <span class="tag">Postpartum Cleared</span>
+    <span class="tag">Home Gym</span>
+    <span class="tag">DB + KB</span>
+    <span class="tag">45–60 min</span>
+  </div>
+</div>
+
+<!-- FLARE BANNER -->
+<div class="flare-bar">
+  <div class="flare-dots">
+    <div class="fdot fdot-green"></div>
+    <div class="fdot fdot-yellow"></div>
+    <div class="fdot fdot-red"></div>
+  </div>
+  <span class="flare-text">Green = full plan · Yellow = half volume · Red = mobility + walk only. See Overview tab.</span>
+</div>
+
+<!-- TAB NAV -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+  <button class="tab-btn" onclick="showTab('warmup')">Warmup</button>
+  <button class="tab-btn" onclick="showTab('dayA')">Day A</button>
+  <button class="tab-btn" onclick="showTab('dayB')">Day B</button>
+  <button class="tab-btn" onclick="showTab('dayC')">Day C</button>
+  <button class="tab-btn" onclick="showTab('flare')">Flare Day</button>
+  <button class="tab-btn" onclick="showTab('cues')">Cue Card</button>
+  <button class="tab-btn" onclick="showTab('weights')">Weights</button>
+</nav>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- OVERVIEW TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="overview" class="tab-panel active">
+  <span class="section-label">The Foundation</span>
+  <h2>Core Principles</h2>
+  <p>With EDS, your joints are already working overtime just to hold you upright. The goal here is to build enough muscle that your body doesn't have to brace to exist — without triggering the hyperdrive compensation patterns that cause neck tension, migraines, and flares.</p>
+
+  <div class="rules-grid">
+    <div class="rule-cell">
+      <span class="rule-label">Intensity</span>
+      <div class="rule-value">RPE 6–7<br><span style="font-size:12px;font-weight:300;font-family:'DM Sans',sans-serif;color:#9a8a7a;">3–4 reps left in tank</span></div>
+    </div>
+    <div class="rule-cell">
+      <span class="rule-label">Tempo</span>
+      <div class="rule-value">3-1-1<br><span style="font-size:12px;font-weight:300;font-family:'DM Sans',sans-serif;color:#9a8a7a;">slow down · pause · up</span></div>
+    </div>
+    <div class="rule-cell">
+      <span class="rule-label">Schedule</span>
+      <div class="rule-value">2–3×/week<br><span style="font-size:12px;font-weight:300;font-family:'DM Sans',sans-serif;color:#9a8a7a;">A + B required</span></div>
+    </div>
+    <div class="rule-cell">
+      <span class="rule-label">Session Length</span>
+      <div class="rule-value">45–60 min<br><span style="font-size:12px;font-weight:300;font-family:'DM Sans',sans-serif;color:#9a8a7a;">incl. warmup</span></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">What We Avoid vs. Prioritize</span>
+
+  <div class="two-col">
+    <div class="avoid-box">
+      <h4>Avoid (for now)</h4>
+      <ul class="check-list">
+        <li>Overhead press</li>
+        <li>Heavy farmer carries</li>
+        <li>KB swings (high rep)</li>
+        <li>Floor push-ups early</li>
+        <li>Upright rows / shrugs</li>
+        <li>Breath-holding</li>
+        <li>Looking up during lifts</li>
+        <li>Jaw clenching</li>
+      </ul>
+    </div>
+    <div class="priority-box">
+      <h4>Prioritize</h4>
+      <ul class="check-list">
+        <li>Glute + leg hypertrophy</li>
+        <li>Supported pulling</li>
+        <li>Neck-safe pressing</li>
+        <li>Mid/lower trap work</li>
+        <li>Slow tempos</li>
+        <li>Breathing + rib position</li>
+        <li>Mid-range control</li>
+        <li>Stopping 1 rep early</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">12-Week Progression</span>
+
+  <div class="phases">
+    <div class="phase">
+      <span class="phase-weeks">Weeks 1–4</span>
+      <div class="phase-name">Foundation</div>
+      <p class="phase-desc">RPE 6–7. Focus on form, joint tolerance, and consistency. Leave workouts feeling "worked" — not wrecked.</p>
+    </div>
+    <div class="phase">
+      <span class="phase-weeks">Weeks 5–8</span>
+      <div class="phase-name">Growth</div>
+      <p class="phase-desc">Main lifts move to 4×6–10. Add 1 extra set to 1–2 exercises if recovery stays good.</p>
+    </div>
+    <div class="phase">
+      <span class="phase-weeks">Weeks 9–12</span>
+      <div class="phase-name">Strength</div>
+      <p class="phase-desc">Squat/deadlift: 5×5–8. Press: 4×6–10. Accessories stay in 10–15 range. Never below 5 reps.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">Daily Readiness</span>
+  <h2>Green / Yellow / Red</h2>
+  <p>Consistency beats hero workouts every time — especially with EDS. Use this system every session.</p>
+
+  <div class="traffic-grid">
+    <div class="traffic-cell tc-green">
+      <div class="tc-dot"></div>
+      <div class="tc-label">Green</div>
+      <p class="tc-desc">Feeling good. Do the full plan as written.</p>
+    </div>
+    <div class="traffic-cell tc-yellow">
+      <div class="tc-dot"></div>
+      <div class="tc-label">Yellow</div>
+      <p class="tc-desc">Fatigued or flare approaching. Cut all sets in half — 1–2 sets only.</p>
+    </div>
+    <div class="traffic-cell tc-red">
+      <div class="tc-dot"></div>
+      <div class="tc-label">Red</div>
+      <p class="tc-desc">Active flare or pain. Skip to Flare Day plan: mobility + walk only.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+  <span class="section-label">Progression Rule</span>
+  <h2>Double Progression</h2>
+
+  <div class="card-accent">
+    <p style="margin:0;font-size:13px;color:#4a3f36;">Work within the rep range (e.g., 8–12). Once you hit the <strong>top of the range on all sets</strong> with perfect form and slow tempo, increase weight next session — but only by 2.5–5 lbs total. Do not increase reps AND weight at the same time.</p>
+  </div>
+
+  <div class="card" style="margin-top:4px;">
+    <p style="margin:0;font-size:13px;color:#4a3f36;">With EDS: progress only when all three are true — (1) full rep range achieved across all sets, (2) tempo stayed slow throughout, (3) no neck/trap takeover, and (4) no symptom spike the next day.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- WARMUP TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="warmup" class="tab-panel">
+  <span class="section-label">Every Session</span>
+  <h2>Warmup</h2>
+  <p>8–10 minutes. Do this before every session — A, B, and C. It incorporates your existing PT movements and adds a few key additions for EDS safety.</p>
+
+  <div class="card">
+    <ul class="warmup-list">
+      <li>Bodyweight squats — 10 reps</li>
+      <li>Glute bridges — 10 reps</li>
+      <li>Cat-cow — 6 reps (slow)</li>
+      <li>Wall slides — 8 reps (scapulae down and back)</li>
+      <li>Hip hinge drill — 8 reps (hands slide down thighs)</li>
+      <li>Chin tuck + nods — 6 gentle reps (keeps neck calm)</li>
+      <li>Scapular set + breath — 5 slow breaths, shoulders down</li>
+    </ul>
+  </div>
+
+  <div class="card-accent">
+    <p style="margin:0;font-size:13px;"><strong>Why the chin tuck?</strong> For EDS and migraine prevention, entering strength work with the neck already "organized" significantly reduces trap compensation during sets. Take it seriously.</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3>3-Minute Cooldown</h3>
+  <p>After every session. Reduces next-day neck and migraine risk.</p>
+
+  <div class="card">
+    <ul class="warmup-list">
+      <li>90/90 breathing — 6 slow exhales (ribs down, shoulders heavy)</li>
+      <li>Cat-cow — 6 reps</li>
+      <li>Gentle neck nods (not rotations) — 5 each way</li>
+      <li>Glute bridge hold — 20 seconds, breathe</li>
+      <li>Child's pose or supine twist — 30 seconds each side</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- DAY A TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="dayA" class="tab-panel">
+  <span class="section-label">Squat + Glutes + Supported Upper</span>
+  <h2>Day A</h2>
+  <p>Lower-body squat emphasis + supported upper body. Tempo: <strong>3 sec down · 1 sec pause · smooth up</strong>. Do not lock joints at top of any movement.</p>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">1</span>
+      <span class="ex-name">Goblet Squat to Chair / Box</span>
+      <span class="ex-sets">3 × 6–10</span>
+    </div>
+    <div class="ex-feel">Feel it: Quads + Glutes · Rest: 90 sec</div>
+    <p class="ex-desc">Hold one DB or KB vertically at your chest. Squat to a chair or box to control depth. Stand without snapping knees at the top.</p>
+    <ul class="cue-list">
+      <li>Ribs stacked over hips</li>
+      <li>Knees track over toes — no caving</li>
+      <li>Sit down under full control (3 sec)</li>
+      <li>Soft knees at the top — no lockout</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">2</span>
+      <span class="ex-name">Dumbbell Romanian Deadlift</span>
+      <span class="ex-sets">3 × 6–10</span>
+    </div>
+    <div class="ex-feel">Feel it: Hamstrings + Glutes · Rest: 90 sec</div>
+    <p class="ex-desc">Hold DBs in front of thighs. Hinge at the hips — knees soft, hips travel back, DBs slide down your legs. Stop at the hamstring stretch, not the floor.</p>
+    <ul class="cue-list">
+      <li>Hips back — not "bend over"</li>
+      <li>Neutral spine — don't look up</li>
+      <li>Stop when you feel hamstring load</li>
+      <li>EDS note: shorten range if you're hanging on joints</li>
+    </ul>
+    <div class="stop-if">⚠ Stop if: you feel low back taking over instead of hamstrings.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">3</span>
+      <span class="ex-name">Supported 1-Arm DB Row</span>
+      <span class="ex-sets">3 × 8–12 / side</span>
+    </div>
+    <div class="ex-feel">Feel it: Mid-back + Lats · Rest: 60 sec</div>
+    <p class="ex-desc">Hand and knee supported on a chair or couch. Torso parallel to floor. Row the DB toward your hip — not your armpit. Pause 1 second at the top.</p>
+    <ul class="cue-list">
+      <li>Shoulder stays away from ear — not shrugging</li>
+      <li>Elbow to back pocket (not ceiling)</li>
+      <li>1-sec squeeze at top</li>
+      <li>Slow lower — 3 seconds</li>
+    </ul>
+    <div class="stop-if">⚠ Stop if: neck tightens or you start shrugging.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">4</span>
+      <span class="ex-name">DB Floor Press (Neutral Grip)</span>
+      <span class="ex-sets">3 × 8–12</span>
+    </div>
+    <div class="ex-feel">Feel it: Chest + Triceps · Rest: 90 sec</div>
+    <p class="ex-desc">Lie on the floor with DBs, palms facing each other (neutral grip). Elbows at ~45°. Press up, stop just short of lockout. Neutral grip significantly reduces shoulder irritation.</p>
+    <ul class="cue-list">
+      <li>Head fully relaxed on floor</li>
+      <li>Ribs down — exhale as you press</li>
+      <li>Elbows not flared (45° angle)</li>
+      <li>No rib flare at top</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">5</span>
+      <span class="ex-name">Step-Ups (Low Step)</span>
+      <span class="ex-sets">2 × 8–10 / side</span>
+    </div>
+    <div class="ex-feel">Feel it: Glutes + Quads · Rest: 60 sec</div>
+    <p class="ex-desc">Use a low step or sturdy surface. Step up slowly, trailing leg barely touches. Step down under control. No pushing off the trailing leg — all work goes to the standing leg.</p>
+    <ul class="cue-list">
+      <li>Light tap with trailing foot — no push off</li>
+      <li>Knee tracks straight</li>
+      <li>Go slow — especially down</li>
+      <li>No knee snap at the top</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">6</span>
+      <span class="ex-name">Dead Bug / Heel Slides</span>
+      <span class="ex-sets">2–3 × 6 / side</span>
+    </div>
+    <div class="ex-feel">Feel it: Deep core · Rest: 30 sec</div>
+    <p class="ex-desc">On your back. Gently press lower back into floor. Lower one leg (straight) or slide heel out while extending opposite arm. Slow and deliberate.</p>
+    <ul class="cue-list">
+      <li>Low back gently presses into floor</li>
+      <li>Exhale fully on each rep</li>
+      <li>Move slow — this is not a speed drill</li>
+    </ul>
+    <div class="stop-if">⚠ Stop immediately if: you feel abdominal "doming" or coning.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- DAY B TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="dayB" class="tab-panel">
+  <span class="section-label">Hinge + Single Leg + Upper Back</span>
+  <h2>Day B</h2>
+  <p>Hip hinge emphasis, single-leg work, and posture-focused upper back. Tempo: <strong>3 sec down · 1 sec pause · smooth up</strong>. Take the support on single-leg work — EDS joints benefit from it.</p>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">1</span>
+      <span class="ex-name">KB Deadlift (Elevated if Needed)</span>
+      <span class="ex-sets">3 × 6–10</span>
+    </div>
+    <div class="ex-feel">Feel it: Glutes + Hamstrings · Rest: 90 sec</div>
+    <p class="ex-desc">KB on the floor between feet. If floor range is too much, elevate it on books or a step. Hinge down, grip, pull shoulders back without shrugging, then "push the floor away."</p>
+    <ul class="cue-list">
+      <li>Wedge: pull shoulder blades down/back — no shrug</li>
+      <li>Push the floor away (not "pick up" the KB)</li>
+      <li>Stand tall — don't lean back at the top</li>
+      <li>Soft knees — no lockout</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">2</span>
+      <span class="ex-name">Split Squat (Short Range + Support)</span>
+      <span class="ex-sets">3 × 6–10 / side</span>
+    </div>
+    <div class="ex-feel">Feel it: Front glute + quad · Rest: 60–90 sec</div>
+    <p class="ex-desc">Staggered stance. Use a chair or wall for hand support — this is not cheating, it's smart with EDS. Shorten the range of motion at first. Control > depth.</p>
+    <ul class="cue-list">
+      <li>Stay tall — don't dump forward</li>
+      <li>Short range is fine — build gradually</li>
+      <li>Front knee tracks straight</li>
+      <li>Hold support for joint stability</li>
+    </ul>
+    <div class="stop-if">⚠ Stop if: knee wobbles uncontrollably or hip drops to one side.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">3</span>
+      <span class="ex-name">Chest-Supported DB Row</span>
+      <span class="ex-sets">3 × 10–12</span>
+    </div>
+    <div class="ex-feel">Feel it: Upper/mid back — not traps · Rest: 60 sec</div>
+    <p class="ex-desc">Lie prone on a bench (or incline chair). Let arms hang, then row elbows back. Chest stays heavy on support throughout — this removes spinal load and trap compensation almost entirely.</p>
+    <ul class="cue-list">
+      <li>Chest stays heavy on bench — no lift-off</li>
+      <li>Pull elbows BACK — not up</li>
+      <li>Wide collarbones (not pinched forward)</li>
+      <li>No shrugging — shoulders stay away from ears</li>
+    </ul>
+    <p class="ex-desc" style="margin-top:8px;font-style:italic;color:#9a8a7a;">No bench? Use the supported 1-arm row from Day A instead, keeping weight light and strict.</p>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">4</span>
+      <span class="ex-name">Incline DB Press or Elevated Push-Up</span>
+      <span class="ex-sets">2–3 × 8–12</span>
+    </div>
+    <div class="ex-feel">Feel it: Chest — neck relaxed · Rest: 90 sec</div>
+    <p class="ex-desc">Incline DB press is generally more shoulder-friendly than flat. Elevated push-up (hands on a couch or table) reduces ground-level neck strain. Choose based on how shoulders feel that day.</p>
+    <ul class="cue-list">
+      <li>Long neck — no chin jutting forward</li>
+      <li>Shoulders down and back</li>
+      <li>Ribs don't flare at the top</li>
+      <li>Stop 1–2 reps early if tension builds</li>
+    </ul>
+    <div class="stop-if">⚠ Skip this exercise entirely on yellow or red days — it's the most migraine-sensitive movement in the program.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">5</span>
+      <span class="ex-name">Weighted Glute Bridge / Hip Thrust</span>
+      <span class="ex-sets">3 × 10–15</span>
+    </div>
+    <div class="ex-feel">Feel it: Glutes (not low back) · Rest: 60 sec</div>
+    <p class="ex-desc">On the floor, DB or KB resting on your hips. Drive hips up, squeeze glutes hard for 1 second. Strong glutes reduce spinal load across everything else you do.</p>
+    <ul class="cue-list">
+      <li>Ribs down — posterior pelvic tilt</li>
+      <li>Belt buckle pointing up at the top</li>
+      <li>1-sec squeeze at top</li>
+      <li>No rib flare — don't overextend</li>
+    </ul>
+    <div class="stop-if">⚠ Stop if: you feel it in your low back instead of glutes. Reduce weight and reset rib position.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">6</span>
+      <span class="ex-name">Reverse Fly or Band Pull-Aparts</span>
+      <span class="ex-sets">2 × 12–15</span>
+    </div>
+    <div class="ex-feel">Feel it: Rear shoulders + mid-back · Rest: 30 sec</div>
+    <p class="ex-desc">Keep the weight very light — lighter than feels necessary. These are not a strength exercise; they're building the posture architecture that keeps your neck safe.</p>
+    <ul class="cue-list">
+      <li>Arms long, very light weight</li>
+      <li>Wide collarbones — not pinched</li>
+      <li>Shoulders in back pockets — stay down</li>
+      <li>Move slow</li>
+    </ul>
+    <div class="stop-if">⚠ If traps fire immediately: reduce weight by half and try again.</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- DAY C TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="dayC" class="tab-panel">
+  <span class="section-label">Optional Third Day</span>
+  <h2>Day C</h2>
+  <p>This is not a full workout. It should leave you feeling <em>better</em> than when you started. Think of it as active recovery with a purpose — building your swimmer's posture back, and keeping blood flowing without loading joints.</p>
+
+  <hr class="divider">
+
+  <h3>Option 1 — KB/DB Circuit</h3>
+  <p>4–6 rounds, rest 90 seconds between rounds. Easy, controlled pace throughout.</p>
+
+  <div class="circuit">
+    <span class="circuit-label">One Round</span>
+    <div class="circuit-item"><span>Glute bridge</span><span class="circuit-count">× 12</span></div>
+    <div class="circuit-item"><span>Goblet squat</span><span class="circuit-count">× 10</span></div>
+    <div class="circuit-item"><span>Supported 1-arm row</span><span class="circuit-count">× 12 / side</span></div>
+    <div class="circuit-item"><span>Elevated push-up or incline press</span><span class="circuit-count">× 8–10</span></div>
+    <div class="circuit-item"><span>Wall slides</span><span class="circuit-count">× 8</span></div>
+  </div>
+
+  <hr class="divider">
+
+  <h3>Option 2 — Swimmer's Posture Day</h3>
+  <p>For days when you want movement but not loading. Rebuilds the upper back musculature that gave you posture as a swimmer.</p>
+
+  <div class="card">
+    <div class="circuit-item" style="border-bottom:1px solid rgba(44,37,32,0.08);padding:9px 0;"><span style="font-size:13px;color:#4a3f36;">Band pull-aparts</span><span style="font-size:12px;color:#b69d76;font-weight:500;">3 × 15</span></div>
+    <div class="circuit-item" style="border-bottom:1px solid rgba(44,37,32,0.08);padding:9px 0;"><span style="font-size:13px;color:#4a3f36;">Y-T-W raises (very light DB)</span><span style="font-size:12px;color:#b69d76;font-weight:500;">2 × 10 each</span></div>
+    <div class="circuit-item" style="border-bottom:1px solid rgba(44,37,32,0.08);padding:9px 0;"><span style="font-size:13px;color:#4a3f36;">Glute bridge hold</span><span style="font-size:12px;color:#b69d76;font-weight:500;">3 × 15 sec</span></div>
+    <div class="circuit-item" style="border-bottom:1px solid rgba(44,37,32,0.08);padding:9px 0;"><span style="font-size:13px;color:#4a3f36;">Dead bug</span><span style="font-size:12px;color:#b69d76;font-weight:500;">2 × 5 / side</span></div>
+    <div class="circuit-item" style="padding:9px 0;"><span style="font-size:13px;color:#4a3f36;">15–25 minute walk</span><span style="font-size:12px;color:#b69d76;font-weight:500;">after</span></div>
+  </div>
+
+  <div class="card-accent" style="margin-top:16px;">
+    <p style="margin:0;font-size:13px;"><strong>Y-T-W explained:</strong> Hold very light DBs, hinge slightly forward, and make Y, T, and W shapes with your arms. These directly train the lower and mid traps — the muscles that hold shoulders down and away from your ears. They're small muscles so go light.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- FLARE DAY TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="flare" class="tab-panel">
+  <span class="section-label">Red Day Plan</span>
+  <h2>Flare Day</h2>
+  <p>Use this when: a flare is coming, migraine risk is high, sleep was poor, joints are unstable, or energy is low. The goal is to stay consistent — not to train through symptoms. 10–15 minutes total.</p>
+
+  <div class="card-dark">
+    <span class="circuit-label">Breath Reset — 2 minutes</span>
+    <p style="font-size:13px;color:rgba(247,243,238,0.7);margin-bottom:0;">Lie on your back. Place hands on your ribs. Take 6 slow exhales, shoulders heavy, jaw unclenched. This resets your nervous system before you move.</p>
+  </div>
+
+  <div class="circuit" style="margin-bottom:14px;">
+    <span class="circuit-label">2 Rounds — Easy and Slow</span>
+    <div class="circuit-item"><span>Glute bridge</span><span class="circuit-count">× 10</span></div>
+    <div class="circuit-item"><span>Box squat (partial range)</span><span class="circuit-count">× 8</span></div>
+    <div class="circuit-item"><span>Supported row — very light</span><span class="circuit-count">× 10 / side</span></div>
+    <div class="circuit-item"><span>Dead bug or heel slides</span><span class="circuit-count">× 5 / side</span></div>
+  </div>
+
+  <div class="card-accent">
+    <p style="margin:0;font-size:13px;"><strong>Walk:</strong> 5–15 minutes if possible. Gentle pace. This is enough. If you finish feeling better than you started, it was perfect.</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3>Neck Tightness Rescue</h3>
+  <p>If traps or neck start firing during any regular workout — stop. Use this before deciding whether to continue or call it a day.</p>
+
+  <div class="card">
+    <ul class="warmup-list">
+      <li>Put the weight down — no exceptions</li>
+      <li>3 slow exhales — shoulders drop on each one</li>
+      <li>Chin tuck + gentle nod — 3 reps</li>
+      <li>Reassess: reduce weight by 10–20% and restart</li>
+    </ul>
+  </div>
+
+  <div class="stop-if" style="font-size:13px;padding:12px;border-radius:6px;margin-top:4px;">
+    <strong>Stop the session entirely if you feel:</strong> neck pain building during a set · tingling down an arm · migraine aura or pressure · shoulder pinching at the front of the shoulder joint.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- CUE CARD TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="cues" class="tab-panel">
+  <span class="section-label">Every Exercise</span>
+  <h2>Universal Rules</h2>
+
+  <div class="universal-rules">
+    <h4>Before Every Set — Run This Checklist</h4>
+    <div class="rule-row">Jaw unclenched</div>
+    <div class="rule-row">Tongue on roof of mouth (reduces jaw tension)</div>
+    <div class="rule-row">Chin gently tucked — "long neck"</div>
+    <div class="rule-row">Shoulders heavy and away from ears</div>
+    <div class="rule-row">Soft elbows and knees — no locking out</div>
+    <div class="rule-row">Exhale on effort — never hold your breath</div>
+  </div>
+
+  <hr class="divider">
+  <span class="section-label">Movement Cues</span>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Goblet Squat</div>
+    <div class="ex-feel">Quads + Glutes</div>
+    <ul class="cue-list">
+      <li>Ribs stacked over hips</li>
+      <li>Knees track over toes</li>
+      <li>Sit down under control</li>
+      <li>Stand up without snapping knees</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Romanian Deadlift</div>
+    <div class="ex-feel">Hamstrings + Glutes</div>
+    <ul class="cue-list">
+      <li>Hips back — shins mostly vertical</li>
+      <li>DBs slide down the legs</li>
+      <li>Stop at hamstring stretch — not the floor</li>
+      <li>Neutral neck — don't look up</li>
+    </ul>
+    <div class="stop-if">EDS note: going too deep = hanging on joints. Shorter range is correct.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">KB Deadlift</div>
+    <div class="ex-feel">Glutes + Hamstrings</div>
+    <ul class="cue-list">
+      <li>Shoulders down and back — no shrug</li>
+      <li>Push the floor away</li>
+      <li>Stand tall — don't lean back</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Glute Bridge / Hip Thrust</div>
+    <div class="ex-feel">Glutes — not low back</div>
+    <ul class="cue-list">
+      <li>Ribs down — posterior pelvic tilt</li>
+      <li>Belt buckle pointing up at the top</li>
+      <li>Squeeze glutes for 1 second</li>
+      <li>No rib flare</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Step-Ups</div>
+    <div class="ex-feel">Glutes + Quads</div>
+    <ul class="cue-list">
+      <li>Light tap with trailing foot — no pushing off</li>
+      <li>Knee tracks straight</li>
+      <li>Go slow — especially down</li>
+      <li>No knee snap at the top</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Split Squat</div>
+    <div class="ex-feel">Front glute + quad</div>
+    <ul class="cue-list">
+      <li>Short range of motion is correct — build it gradually</li>
+      <li>Stay tall — don't dump forward</li>
+      <li>Hold wall or chair for stability</li>
+      <li>Front knee tracks straight</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Supported 1-Arm Row</div>
+    <div class="ex-feel">Mid-back + Lats — not traps</div>
+    <ul class="cue-list">
+      <li>Shoulder stays away from ear</li>
+      <li>Elbow to back pocket — not ceiling</li>
+      <li>1-sec pause at top</li>
+      <li>Slow lower — 3 seconds</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Chest-Supported Row</div>
+    <div class="ex-feel">Upper + mid back</div>
+    <ul class="cue-list">
+      <li>Chest heavy on bench throughout</li>
+      <li>Pull elbows BACK — not up</li>
+      <li>Wide collarbones</li>
+      <li>No shrugging at any point</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">DB Floor Press (Neutral Grip)</div>
+    <div class="ex-feel">Chest + Triceps</div>
+    <ul class="cue-list">
+      <li>Head fully relaxed on floor</li>
+      <li>Elbows at 45° — not flared</li>
+      <li>Exhale as you press</li>
+      <li>Stop short of full lockout</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Incline Press / Elevated Push-Up</div>
+    <div class="ex-feel">Chest — neck must stay relaxed</div>
+    <ul class="cue-list">
+      <li>Long neck — no chin jutting</li>
+      <li>Shoulders down</li>
+      <li>Ribs don't flare at top</li>
+      <li>Stop 1–2 reps early if tension builds</li>
+    </ul>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Reverse Fly / Pull-Aparts</div>
+    <div class="ex-feel">Rear shoulders + mid-back</div>
+    <ul class="cue-list">
+      <li>Arms long — weight VERY light</li>
+      <li>Wide collarbones</li>
+      <li>Shoulders in back pockets</li>
+      <li>Move slow — always</li>
+    </ul>
+    <div class="stop-if">If traps fire immediately: cut weight in half.</div>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-name" style="margin-bottom:6px;">Dead Bug / Heel Slides</div>
+    <div class="ex-feel">Deep core</div>
+    <ul class="cue-list">
+      <li>Low back gently into floor</li>
+      <li>Exhale fully on each rep</li>
+      <li>Slow movement — not a speed drill</li>
+      <li>No doming of the abdomen</li>
+    </ul>
+  </div>
+
+  <div class="rescue">
+    <h3>Mid-Workout Neck Rescue</h3>
+    <p>Put the weight down. Then:</p>
+    <ol>
+      <li>3 slow exhales — shoulders drop each time</li>
+      <li>Chin tuck + nod × 3</li>
+      <li>Reduce weight 10–20% and restart</li>
+    </ol>
+    <p style="margin-top:10px;">If it keeps happening: call the session. You're done for today.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- WEIGHTS TAB -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="weights" class="tab-panel">
+  <span class="section-label">Starting Point</span>
+  <h2>How to Choose Your Weight</h2>
+  <p>With EDS, choose weights based on <strong>stability first</strong> — not strength. The weight that feels too easy at rep 1 might become the right weight by rep 8 when you're going slow and feeling every inch of the movement.</p>
+
+  <hr class="divider">
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h4>The "Perfect 8" Test</h4>
+      <p>Pick a weight. Do 8 reps with full 3-second tempo. Reps 1–6 should feel smooth. Reps 7–8 should be harder but still stable — no shaking, no neck tension, no joint wobble. You should feel like you could do 3–4 more if forced.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h4>If 8 Feels Too Easy</h4>
+      <p>You could do 12+ comfortably → go heavier next set. But verify: was the tempo actually slow? Were joints actually stable? Many people discover the weight was "right" once tempo is honest.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h4>If Compensation Appears</h4>
+      <p>Neck tension, shrugging, wobbling, jaw clenching → weight is too heavy. Reduce by 10–20% and retest. This is not failure — this is accurate training.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">Starting Ranges</span>
+  <p style="margin-bottom:14px;">Approximate starting ranges for someone with your profile. These are starting points — not requirements.</p>
+
+  <table class="weight-table">
+    <thead>
+      <tr>
+        <th>Exercise</th>
+        <th>Starting Range</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Goblet Squat</td>
+        <td class="weight-range">20–35 lb</td>
+        <td>Go lighter — tempo matters more</td>
+      </tr>
+      <tr>
+        <td>KB Deadlift</td>
+        <td class="weight-range">25–45 lb</td>
+        <td>Elevate KB if floor range is too much</td>
+      </tr>
+      <tr>
+        <td>DB Romanian Deadlift</td>
+        <td class="weight-range">15–30 lb / hand</td>
+        <td>Shorten range before increasing weight</td>
+      </tr>
+      <tr>
+        <td>Glute Bridge / Hip Thrust</td>
+        <td class="weight-range">25–55 lb</td>
+        <td>Glutes are strong — can go heavier here safely</td>
+      </tr>
+      <tr>
+        <td>Step-Ups</td>
+        <td class="weight-range">Bodyweight first</td>
+        <td>Add weight only after 3–4 weeks of stability</td>
+      </tr>
+      <tr>
+        <td>Split Squat</td>
+        <td class="weight-range">Bodyweight first</td>
+        <td>Range of motion and control before any load</td>
+      </tr>
+      <tr>
+        <td>1-Arm DB Row</td>
+        <td class="weight-range">15–30 lb</td>
+        <td>Support = more weight possible safely</td>
+      </tr>
+      <tr>
+        <td>Chest-Supported Row</td>
+        <td class="weight-range">10–25 lb / hand</td>
+        <td>Lighter than you think — strict form only</td>
+      </tr>
+      <tr>
+        <td>DB Floor Press</td>
+        <td class="weight-range">10–20 lb / hand</td>
+        <td>Neck-safe priority over weight</td>
+      </tr>
+      <tr>
+        <td>Reverse Fly / Pull-Aparts</td>
+        <td class="weight-range">3–8 lb / hand</td>
+        <td>Always light — posture architecture work</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <span class="section-label">Progression</span>
+  <h3>When to Add Weight</h3>
+
+  <div class="card-accent">
+    <p style="margin:0;font-size:13px;">Progress only when <strong>all four</strong> are true: (1) you hit the top of the rep range on all sets, (2) tempo stayed slow throughout, (3) no traps or neck took over, (4) no symptom spike the next day.</p>
+  </div>
+
+  <div class="card" style="margin-top:4px;">
+    <p style="margin:0;font-size:13px;">When those are all true → add <strong>2.5–5 lbs total</strong> (not per hand) OR add 1–2 reps. Never increase both at once. For lower body, you can progress slightly faster than upper body.</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3>Troubleshooting</h3>
+
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px;">
+      <span class="chip chip-red">Problem</span>
+      <span style="font-size:13px;font-weight:500;color:#2c2520;">Traps or neck engaging</span>
+    </div>
+    <ul class="cue-list" style="margin-top:0;">
+      <li>Reduce weight 10–20%</li>
+      <li>Add 1 second pause at the controlled position</li>
+      <li>Keep chin gently tucked</li>
+      <li>Shorten the set — stop 2 reps earlier</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px;">
+      <span class="chip chip-yellow">Problem</span>
+      <span style="font-size:13px;font-weight:500;color:#2c2520;">Joint wobble or instability</span>
+    </div>
+    <ul class="cue-list" style="margin-top:0;">
+      <li>Go lighter immediately</li>
+      <li>Add physical support (wall, chair, bench)</li>
+      <li>Shorten range of motion</li>
+      <li>Slow the tempo down further</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px;">
+      <span class="chip chip-green">Goal</span>
+      <span style="font-size:13px;font-weight:500;color:#2c2520;">The right weight feels like</span>
+    </div>
+    <ul class="cue-list" style="margin-top:0;">
+      <li>Fully controlled across all reps</li>
+      <li>Working muscles are fatiguing — not joints</li>
+      <li>Neck and traps stay quiet</li>
+      <li>You feel worked — not wrecked</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Built to Last</strong>
+  <p>EDS-Friendly Muscle Building · 12-Week Home Program</p>
+  <p style="margin-top:6px;">2–3 days/week · DB + KB · Postpartum-cleared · Migraine-safe</p>
+</footer>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
