@@ -303,6 +303,35 @@ p { margin-bottom: 14px; color: #4a3f36; }
   margin-top: 10px;
 }
 
+/* ── WATCH BUTTON ── */
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 8px 14px;
+  background-color: #f0ebe2;
+  border: 1px solid rgba(182,157,118,0.4);
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b4e1a;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.watch-btn:hover {
+  background-color: #e8dfd0;
+  border-color: #b69d76;
+}
+
+.watch-btn::before {
+  content: '▶';
+  font-size: 9px;
+  color: #b69d76;
+}
+
 /* ── PILL CHIPS ── */
 .chip {
   display: inline-block;
@@ -915,16 +944,74 @@ footer strong {
   <h2>Warmup</h2>
   <p>8–10 minutes. Do this before every session — A, B, and C. It incorporates your existing PT movements and adds a few key additions for EDS safety.</p>
 
-  <div class="card">
-    <ul class="warmup-list">
-      <li>Bodyweight squats — 10 reps</li>
-      <li>Glute bridges — 10 reps</li>
-      <li>Cat-cow — 6 reps (slow)</li>
-      <li>Wall slides — 8 reps (scapulae down and back)</li>
-      <li>Hip hinge drill — 8 reps (hands slide down thighs)</li>
-      <li>Chin tuck + nods — 6 gentle reps (keeps neck calm)</li>
-      <li>Scapular set + breath — 5 slow breaths, shoulders down</li>
-    </ul>
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">1</span>
+      <span class="ex-name">Bodyweight Squats</span>
+      <span class="ex-sets">10 reps</span>
+    </div>
+    <p class="ex-desc">Controlled squat to a chair or just below parallel. Knees track over toes, chest up. These are your PT squats — same movement.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=bodyweight+squat+form+beginner+hypermobility" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">2</span>
+      <span class="ex-name">Glute Bridges</span>
+      <span class="ex-sets">10 reps</span>
+    </div>
+    <p class="ex-desc">Your PT bridges. Drive hips up, squeeze glutes for 1 second, lower slowly. Ribs down — don't overextend at the top.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=glute+bridge+form+beginner+postpartum" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">3</span>
+      <span class="ex-name">Cat-Cow</span>
+      <span class="ex-sets">6 reps (slow)</span>
+    </div>
+    <p class="ex-desc">On hands and knees. Inhale as you arch (cow), exhale as you round (cat). Move through the full spine — don't rush. This is a nervous system reset as much as a mobility drill.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=cat+cow+stretch+spine+mobility+beginner" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">4</span>
+      <span class="ex-name">Wall Slides</span>
+      <span class="ex-sets">8 reps</span>
+    </div>
+    <p class="ex-desc">Stand with back against a wall, elbows and wrists in contact. Slide arms up slowly, keeping contact the whole way. Scapulae draw down and back — not shrugging. Critical for EDS shoulder patterning.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=wall+slide+exercise+shoulder+posture+EDS" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">5</span>
+      <span class="ex-name">Hip Hinge Drill</span>
+      <span class="ex-sets">8 reps</span>
+    </div>
+    <p class="ex-desc">Stand with hands on thighs. Push hips back as hands slide toward knees — spine stays neutral. This grooves the pattern for your RDL and KB deadlift before any weight is added.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=hip+hinge+drill+beginner+deadlift+pattern" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">6</span>
+      <span class="ex-name">Chin Tuck + Nods</span>
+      <span class="ex-sets">6 gentle reps</span>
+    </div>
+    <p class="ex-desc">Stand or sit tall. Gently draw chin straight back (not down). From there, small slow nod. This organizes the neck before loading and significantly reduces trap compensation and migraine risk during your workout.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=chin+tuck+exercise+neck+posture+migraine+EDS" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">7</span>
+      <span class="ex-name">Scapular Set + Breath</span>
+      <span class="ex-sets">5 slow breaths</span>
+    </div>
+    <p class="ex-desc">Stand tall. Draw shoulder blades gently down and back — hold that position. Take 5 slow belly breaths without losing the scapular position. This is your "ready state" before every set.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=scapular+setting+exercise+EDS+hypermobility+posture" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="card-accent">
@@ -936,15 +1023,56 @@ footer strong {
   <h3>3-Minute Cooldown</h3>
   <p>After every session. Reduces next-day neck and migraine risk.</p>
 
-  <div class="card">
-    <ul class="warmup-list">
-      <li>90/90 breathing — 6 slow exhales (ribs down, shoulders heavy)</li>
-      <li>Cat-cow — 6 reps</li>
-      <li>Gentle neck nods (not rotations) — 5 each way</li>
-      <li>Glute bridge hold — 20 seconds, breathe</li>
-      <li>Child's pose or supine twist — 30 seconds each side</li>
-    </ul>
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">1</span>
+      <span class="ex-name">90/90 Breathing</span>
+      <span class="ex-sets">6 slow exhales</span>
+    </div>
+    <p class="ex-desc">Lie on your back, knees bent. Hands on ribs. Exhale fully — ribs down, shoulders heavy. This resets your nervous system and reduces post-workout tension that can trigger migraines.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=90+90+diaphragmatic+breathing+PRI+nervous+system" target="_blank">Watch Tutorial</a>
   </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">2</span>
+      <span class="ex-name">Cat-Cow</span>
+      <span class="ex-sets">6 reps</span>
+    </div>
+    <p class="ex-desc">Same as the warmup — spine decompression after loading. Move slowly and breathe.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=cat+cow+stretch+spine+mobility+beginner" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">3</span>
+      <span class="ex-name">Gentle Neck Nods</span>
+      <span class="ex-sets">5 each way</span>
+    </div>
+    <p class="ex-desc">Slow yes-nods only — no rotation. This releases cervical tension after upper body work. Stop immediately if you feel dizziness or pressure.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=gentle+neck+nod+mobility+cervical+tension+relief" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">4</span>
+      <span class="ex-name">Glute Bridge Hold</span>
+      <span class="ex-sets">20 seconds</span>
+    </div>
+    <p class="ex-desc">Bodyweight only. Hold at the top and breathe. Lets the posterior chain decompress while staying gently active.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=glute+bridge+hold+isometric+beginner" target="_blank">Watch Tutorial</a>
+  </div>
+
+  <div class="exercise-card">
+    <div class="ex-top">
+      <span class="ex-num">5</span>
+      <span class="ex-name">Child's Pose or Supine Twist</span>
+      <span class="ex-sets">30 sec each side</span>
+    </div>
+    <p class="ex-desc">Child's pose for lower back and hips. Supine twist (on back, knees to one side) if child's pose is uncomfortable. Move into it gently — don't force range with EDS.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=child's+pose+supine+twist+cooldown+stretching+beginner" target="_blank">Watch Tutorial</a>
+  </div>
+
 </div>
 
 <!-- ══════════════════════════════════════════════ -->
@@ -969,6 +1097,7 @@ footer strong {
       <li>Sit down under full control (3 sec)</li>
       <li>Soft knees at the top — no lockout</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=goblet+squat+hypermobility+EDS+beginner" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -986,6 +1115,7 @@ footer strong {
       <li>EDS note: shorten range if you're hanging on joints</li>
     </ul>
     <div class="stop-if">⚠ Stop if: you feel low back taking over instead of hamstrings.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=romanian+deadlift+dumbbell+beginner+form+hypermobility" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1003,6 +1133,7 @@ footer strong {
       <li>Slow lower — 3 seconds</li>
     </ul>
     <div class="stop-if">⚠ Stop if: neck tightens or you start shrugging.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=single+arm+dumbbell+row+supported+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1019,6 +1150,7 @@ footer strong {
       <li>Elbows not flared (45° angle)</li>
       <li>No rib flare at top</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=dumbbell+floor+press+neutral+grip+beginner" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1035,6 +1167,7 @@ footer strong {
       <li>Go slow — especially down</li>
       <li>No knee snap at the top</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=step+up+exercise+beginner+form+glutes" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1051,6 +1184,7 @@ footer strong {
       <li>Move slow — this is not a speed drill</li>
     </ul>
     <div class="stop-if">⚠ Stop immediately if: you feel abdominal "doming" or coning.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=dead+bug+exercise+postpartum+core+beginner" target="_blank">Watch Tutorial</a>
   </div>
 </div>
 
@@ -1076,6 +1210,7 @@ footer strong {
       <li>Stand tall — don't lean back at the top</li>
       <li>Soft knees — no lockout</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=kettlebell+deadlift+beginner+form+hypermobility" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1093,6 +1228,7 @@ footer strong {
       <li>Hold support for joint stability</li>
     </ul>
     <div class="stop-if">⚠ Stop if: knee wobbles uncontrollably or hip drops to one side.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=split+squat+beginner+supported+hypermobility" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1110,6 +1246,7 @@ footer strong {
       <li>No shrugging — shoulders stay away from ears</li>
     </ul>
     <p class="ex-desc" style="margin-top:8px;font-style:italic;color:#9a8a7a;">No bench? Use the supported 1-arm row from Day A instead, keeping weight light and strict.</p>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=chest+supported+dumbbell+row+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1127,6 +1264,7 @@ footer strong {
       <li>Stop 1–2 reps early if tension builds</li>
     </ul>
     <div class="stop-if">⚠ Skip this exercise entirely on yellow or red days — it's the most migraine-sensitive movement in the program.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=incline+dumbbell+press+beginner+form+neck+safe" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1144,6 +1282,7 @@ footer strong {
       <li>No rib flare — don't overextend</li>
     </ul>
     <div class="stop-if">⚠ Stop if: you feel it in your low back instead of glutes. Reduce weight and reset rib position.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=weighted+glute+bridge+hip+thrust+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1161,6 +1300,7 @@ footer strong {
       <li>Move slow</li>
     </ul>
     <div class="stop-if">⚠ If traps fire immediately: reduce weight by half and try again.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=reverse+fly+dumbbell+rear+delt+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 </div>
 
@@ -1277,6 +1417,7 @@ footer strong {
       <li>Sit down under control</li>
       <li>Stand up without snapping knees</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=goblet+squat+hypermobility+EDS+beginner" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1289,6 +1430,7 @@ footer strong {
       <li>Neutral neck — don't look up</li>
     </ul>
     <div class="stop-if">EDS note: going too deep = hanging on joints. Shorter range is correct.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=romanian+deadlift+dumbbell+beginner+form+hypermobility" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1299,6 +1441,7 @@ footer strong {
       <li>Push the floor away</li>
       <li>Stand tall — don't lean back</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=kettlebell+deadlift+beginner+form+hypermobility" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1310,6 +1453,7 @@ footer strong {
       <li>Squeeze glutes for 1 second</li>
       <li>No rib flare</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=weighted+glute+bridge+hip+thrust+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1321,6 +1465,7 @@ footer strong {
       <li>Go slow — especially down</li>
       <li>No knee snap at the top</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=step+up+exercise+beginner+form+glutes" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1332,6 +1477,7 @@ footer strong {
       <li>Hold wall or chair for stability</li>
       <li>Front knee tracks straight</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=split+squat+beginner+supported+hypermobility" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1343,6 +1489,7 @@ footer strong {
       <li>1-sec pause at top</li>
       <li>Slow lower — 3 seconds</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=single+arm+dumbbell+row+supported+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1354,6 +1501,7 @@ footer strong {
       <li>Wide collarbones</li>
       <li>No shrugging at any point</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=chest+supported+dumbbell+row+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1365,6 +1513,7 @@ footer strong {
       <li>Exhale as you press</li>
       <li>Stop short of full lockout</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=dumbbell+floor+press+neutral+grip+beginner" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1376,6 +1525,7 @@ footer strong {
       <li>Ribs don't flare at top</li>
       <li>Stop 1–2 reps early if tension builds</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=incline+dumbbell+press+beginner+form+neck+safe" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1388,6 +1538,7 @@ footer strong {
       <li>Move slow — always</li>
     </ul>
     <div class="stop-if">If traps fire immediately: cut weight in half.</div>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=reverse+fly+dumbbell+rear+delt+beginner+form" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="exercise-card">
@@ -1399,6 +1550,7 @@ footer strong {
       <li>Slow movement — not a speed drill</li>
       <li>No doming of the abdomen</li>
     </ul>
+    <a class="watch-btn" href="https://www.youtube.com/results?search_query=dead+bug+exercise+postpartum+core+beginner" target="_blank">Watch Tutorial</a>
   </div>
 
   <div class="rescue">
